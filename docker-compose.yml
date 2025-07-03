@@ -1,0 +1,12 @@
+---
+networks:
+  my-network:
+
+services:
+  etl:
+    build:
+      context: ./
+      dockerfile: ./Docker/Dockerfile
+    command: "sleep infinity"
+    networks:
+      - my-network
