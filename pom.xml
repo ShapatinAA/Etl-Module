@@ -55,7 +55,7 @@
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <!-- Replace this with the main class of your job -->
-                                    <mainClass>org.ashapatin.etl.Main</mainClass>
+                                    <mainClass>org.ashapatin.etl.app.Main</mainClass>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>
