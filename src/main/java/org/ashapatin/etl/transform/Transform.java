@@ -1,4 +1,7 @@
 package org.ashapatin.etl.transform;
 
-public class Transform {
+public interface Transform<IN, OUT> {
+
+  public OUT transform(IN data);
+
 }
