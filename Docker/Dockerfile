@@ -7,11 +7,5 @@ COPY . /app
 RUN cd /app && \
     mvn clean package
 
-FROM flink:java11
-
-RUN mkdir app
-
-COPY --from=Build /app /app
-
 
 

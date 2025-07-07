@@ -1,5 +1,9 @@
 package org.ashapatin.etl.app;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 import org.ashapatin.etl.app.exception.EtlException;
 import org.ashapatin.etl.app.exception.IncorrectInputException;
 import org.ashapatin.etl.extract.Extract;
@@ -8,6 +12,7 @@ import org.ashapatin.etl.extract.exception.IncorrectSourceNameException;
 import org.ashapatin.etl.load.Load;
 import org.ashapatin.etl.load.LoadFactory;
 import org.ashapatin.etl.load.exception.IncorrectReceiverNameException;
+import org.ashapatin.etl.model.WeatherData;
 import org.ashapatin.etl.transform.Transform;
 import org.ashapatin.etl.transform.TransformFactory;
 
@@ -39,7 +44,7 @@ public class EtlApplication {
   public EtlApplication(String[] parameters) {
     this();
     if (parameters.length > 0) {
-      String[] args = parameters[0].split("To", 2);
+      String[] args = parameters[0].toLowerCase().split("to", 2);
       sourceName = args[0];
       receiverName = args[1];
     }
@@ -60,6 +65,7 @@ public class EtlApplication {
     Transform transformer = getTransformer();
     Load loader = getLoader();
     loader.load(transformer.transform(extractor.extract(sourceInfo)));
+
   }
 
   /**
@@ -75,6 +81,7 @@ public class EtlApplication {
   private Transform getTransformer() {
     return TransformFactory.createTransformer();
   }
+
   private Load getLoader() throws IncorrectReceiverNameException {
     return LoadFactory.createLoader(receiverName);
   }

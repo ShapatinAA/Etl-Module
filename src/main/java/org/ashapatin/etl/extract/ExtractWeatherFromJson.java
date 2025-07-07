@@ -9,10 +9,16 @@ import org.ashapatin.etl.model.WeatherData;
 public class ExtractWeatherFromJson implements Extract<WeatherData> {
   @Override
   public WeatherData extract(String sourceInfo) throws IncorrectSourceInfoException, IOException {
+    File file = openFile(sourceInfo);
+    ObjectMapper mapper = new ObjectMapper();
+    WeatherData weatherData = mapper.readValue(file, WeatherData.class);
+    return weatherData;
+  }
+
+  private File openFile(String sourceInfo) throws IncorrectSourceInfoException {
     File file = new File(sourceInfo);
     validateFile(file);
-    ObjectMapper mapper = new ObjectMapper();
-    return mapper.readValue(file, WeatherData.class);
+    return file;
   }
   private void validateFile(File file) throws IncorrectSourceInfoException {
     if (!file.exists() || !file.isFile() || !file.canRead()) {
