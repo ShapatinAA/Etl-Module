@@ -1,9 +1,5 @@
 package org.ashapatin.etl.app;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
 import org.ashapatin.etl.app.exception.EtlException;
 import org.ashapatin.etl.app.exception.IncorrectInputException;
 import org.ashapatin.etl.extract.Extract;
@@ -12,7 +8,6 @@ import org.ashapatin.etl.extract.exception.IncorrectSourceNameException;
 import org.ashapatin.etl.load.Load;
 import org.ashapatin.etl.load.LoadFactory;
 import org.ashapatin.etl.load.exception.IncorrectReceiverNameException;
-import org.ashapatin.etl.model.WeatherData;
 import org.ashapatin.etl.transform.Transform;
 import org.ashapatin.etl.transform.TransformFactory;
 

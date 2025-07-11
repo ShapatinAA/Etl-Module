@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.Date;
 import java.util.List;
+import lombok.Builder;
 
 @JsonPropertyOrder({
     "avg_temperature_2m_24h",
@@ -45,79 +46,80 @@ import java.util.List;
     "sunset_iso",
     "sunrise_iso"
 })
+@Builder
 public class WeatherAggregatedData {
 
   @JsonProperty("avg_temperature_2m_24h")
-  private Double avgTemperature2m24h;
+  private List<Double> avgTemperature2m24h;
 
   @JsonProperty("avg_relative_humidity_2m_24h")
-  private Double avgRelativeHumidity2m24h;
+  private List<Double> avgRelativeHumidity2m24h;
 
   @JsonProperty("avg_dew_point_2m_24h")
-  private Double avgDewPoint2m24h;
+  private List<Double> avgDewPoint2m24h;
 
   @JsonProperty("avg_apparent_temperature_24h")
-  private Double avgApparentTemperature24h;
+  private List<Double> avgApparentTemperature24h;
 
   @JsonProperty("avg_temperature_80m_24h")
-  private Double avgTemperature80m24h;
+  private List<Double> avgTemperature80m24h;
 
   @JsonProperty("avg_temperature_120m_24h")
-  private Double avgTemperature120m24h;
+  private List<Double> avgTemperature120m24h;
 
   @JsonProperty("avg_wind_speed_10m_24h")
-  private Double avgWindSpeed10m24h;
+  private List<Double> avgWindSpeed10m24h;
 
   @JsonProperty("avg_wind_speed_80m_24h")
-  private Double avgWindSpeed80m24h;
+  private List<Double> avgWindSpeed80m24h;
 
   @JsonProperty("avg_visibility_24h")
-  private Double avgVisibility24h;
+  private List<Double> avgVisibility24h;
 
   @JsonProperty("total_rain_24h")
-  private Double totalRain24h;
+  private List<Double> totalRain24h;
 
   @JsonProperty("total_showers_24h")
-  private Double totalShowers24h;
+  private List<Double> totalShowers24h;
 
   @JsonProperty("total_snowfall_24h")
-  private Double totalSnowfall24h;
+  private List<Double> totalSnowfall24h;
 
   @JsonProperty("avg_temperature_2m_daylight")
-  private Double avgTemperature2mDaylight;
+  private List<Double> avgTemperature2mDaylight;
 
   @JsonProperty("avg_relative_humidity_2m_daylight")
-  private Double avgRelativeHumidity2mDaylight;
+  private List<Double> avgRelativeHumidity2mDaylight;
 
   @JsonProperty("avg_dew_point_2m_daylight")
-  private Double avgDewPoint2mDaylight;
+  private List<Double> avgDewPoint2mDaylight;
 
   @JsonProperty("avg_apparent_temperature_daylight")
-  private Double avgApparentTemperatureDaylight;
+  private List<Double> avgApparentTemperatureDaylight;
 
   @JsonProperty("avg_temperature_80m_daylight")
-  private Double avgTemperature80mDaylight;
+  private List<Double> avgTemperature80mDaylight;
 
   @JsonProperty("avg_temperature_120m_daylight")
-  private Double avgTemperature120mDaylight;
+  private List<Double> avgTemperature120mDaylight;
 
   @JsonProperty("avg_wind_speed_10m_daylight")
-  private Double avgWindSpeed10mDaylight;
+  private List<Double> avgWindSpeed10mDaylight;
 
   @JsonProperty("avg_wind_speed_80m_daylight")
-  private Double avgWindSpeed80mDaylight;
+  private List<Double> avgWindSpeed80mDaylight;
 
   @JsonProperty("avg_visibility_daylight")
-  private Double avgVisibilityDaylight;
+  private List<Double> avgVisibilityDaylight;
 
   @JsonProperty("total_rain_daylight")
-  private Double totalRainDaylight;
+  private List<Double> totalRainDaylight;
 
   @JsonProperty("total_showers_daylight")
-  private Double totalShowersDaylight;
+  private List<Double> totalShowersDaylight;
 
   @JsonProperty("total_snowfall_daylight")
-  private Double totalSnowfallDaylight;
+  private List<Double> totalSnowfallDaylight;
 
   @JsonProperty("wind_speed_10m_m_per_s")
   private List<Double> windSpeed10mMPerS;
@@ -153,7 +155,7 @@ public class WeatherAggregatedData {
   private List<Double> snowfallMm;
 
   @JsonProperty("daylight_hours")
-  private List<Double> daylightHours;
+  private List<Integer> daylightHours;
 
   @JsonProperty("sunset_iso")
   private List<Date> sunsetIso;
@@ -162,242 +164,242 @@ public class WeatherAggregatedData {
   private List<Date> sunriseIso;
 
   @JsonProperty("avg_temperature_2m_24h")
-  public Double getAvgTemperature2m24h() {
+  public List<Double> getAvgTemperature2m24h() {
     return avgTemperature2m24h;
   }
 
   @JsonProperty("avg_temperature_2m_24h")
-  public void setAvgTemperature2m24h(Double avgTemperature2m24h) {
+  public void setAvgTemperature2m24h(List<Double> avgTemperature2m24h) {
     this.avgTemperature2m24h = avgTemperature2m24h;
   }
 
   @JsonProperty("avg_relative_humidity_2m_24h")
-  public Double getAvgRelativeHumidity2m24h() {
+  public List<Double> getAvgRelativeHumidity2m24h() {
     return avgRelativeHumidity2m24h;
   }
 
   @JsonProperty("avg_relative_humidity_2m_24h")
-  public void setAvgRelativeHumidity2m24h(Double avgRelativeHumidity2m24h) {
+  public void setAvgRelativeHumidity2m24h(List<Double> avgRelativeHumidity2m24h) {
     this.avgRelativeHumidity2m24h = avgRelativeHumidity2m24h;
   }
 
   @JsonProperty("avg_dew_point_2m_24h")
-  public Double getAvgDewPoint2m24h() {
+  public List<Double> getAvgDewPoint2m24h() {
     return avgDewPoint2m24h;
   }
 
   @JsonProperty("avg_dew_point_2m_24h")
-  public void setAvgDewPoint2m24h(Double avgDewPoint2m24h) {
+  public void setAvgDewPoint2m24h(List<Double> avgDewPoint2m24h) {
     this.avgDewPoint2m24h = avgDewPoint2m24h;
   }
 
   @JsonProperty("avg_apparent_temperature_24h")
-  public Double getAvgApparentTemperature24h() {
+  public List<Double> getAvgApparentTemperature24h() {
     return avgApparentTemperature24h;
   }
 
   @JsonProperty("avg_apparent_temperature_24h")
-  public void setAvgApparentTemperature24h(Double avgApparentTemperature24h) {
+  public void setAvgApparentTemperature24h(List<Double> avgApparentTemperature24h) {
     this.avgApparentTemperature24h = avgApparentTemperature24h;
   }
 
   @JsonProperty("avg_temperature_80m_24h")
-  public Double getAvgTemperature80m24h() {
+  public List<Double> getAvgTemperature80m24h() {
     return avgTemperature80m24h;
   }
 
   @JsonProperty("avg_temperature_80m_24h")
-  public void setAvgTemperature80m24h(Double avgTemperature80m24h) {
+  public void setAvgTemperature80m24h(List<Double> avgTemperature80m24h) {
     this.avgTemperature80m24h = avgTemperature80m24h;
   }
 
   @JsonProperty("avg_temperature_120m_24h")
-  public Double getAvgTemperature120m24h() {
+  public List<Double> getAvgTemperature120m24h() {
     return avgTemperature120m24h;
   }
 
   @JsonProperty("avg_temperature_120m_24h")
-  public void setAvgTemperature120m24h(Double avgTemperature120m24h) {
+  public void setAvgTemperature120m24h(List<Double> avgTemperature120m24h) {
     this.avgTemperature120m24h = avgTemperature120m24h;
   }
 
   @JsonProperty("avg_wind_speed_10m_24h")
-  public Double getAvgWindSpeed10m24h() {
+  public List<Double> getAvgWindSpeed10m24h() {
     return avgWindSpeed10m24h;
   }
 
   @JsonProperty("avg_wind_speed_10m_24h")
-  public void setAvgWindSpeed10m24h(Double avgWindSpeed10m24h) {
+  public void setAvgWindSpeed10m24h(List<Double> avgWindSpeed10m24h) {
     this.avgWindSpeed10m24h = avgWindSpeed10m24h;
   }
 
   @JsonProperty("avg_wind_speed_80m_24h")
-  public Double getAvgWindSpeed80m24h() {
+  public List<Double> getAvgWindSpeed80m24h() {
     return avgWindSpeed80m24h;
   }
 
   @JsonProperty("avg_wind_speed_80m_24h")
-  public void setAvgWindSpeed80m24h(Double avgWindSpeed80m24h) {
+  public void setAvgWindSpeed80m24h(List<Double> avgWindSpeed80m24h) {
     this.avgWindSpeed80m24h = avgWindSpeed80m24h;
   }
 
   @JsonProperty("avg_visibility_24h")
-  public Double getAvgVisibility24h() {
+  public List<Double> getAvgVisibility24h() {
     return avgVisibility24h;
   }
 
   @JsonProperty("avg_visibility_24h")
-  public void setAvgVisibility24h(Double avgVisibility24h) {
+  public void setAvgVisibility24h(List<Double> avgVisibility24h) {
     this.avgVisibility24h = avgVisibility24h;
   }
 
   @JsonProperty("total_rain_24h")
-  public Double getTotalRain24h() {
+  public List<Double> getTotalRain24h() {
     return totalRain24h;
   }
 
   @JsonProperty("total_rain_24h")
-  public void setTotalRain24h(Double totalRain24h) {
+  public void setTotalRain24h(List<Double> totalRain24h) {
     this.totalRain24h = totalRain24h;
   }
 
   @JsonProperty("total_showers_24h")
-  public Double getTotalShowers24h() {
+  public List<Double> getTotalShowers24h() {
     return totalShowers24h;
   }
 
   @JsonProperty("total_showers_24h")
-  public void setTotalShowers24h(Double totalShowers24h) {
+  public void setTotalShowers24h(List<Double> totalShowers24h) {
     this.totalShowers24h = totalShowers24h;
   }
 
   @JsonProperty("total_snowfall_24h")
-  public Double getTotalSnowfall24h() {
+  public List<Double> getTotalSnowfall24h() {
     return totalSnowfall24h;
   }
 
   @JsonProperty("total_snowfall_24h")
-  public void setTotalSnowfall24h(Double totalSnowfall24h) {
+  public void setTotalSnowfall24h(List<Double> totalSnowfall24h) {
     this.totalSnowfall24h = totalSnowfall24h;
   }
 
   @JsonProperty("avg_temperature_2m_daylight")
-  public Double getAvgTemperature2mDaylight() {
+  public List<Double> getAvgTemperature2mDaylight() {
     return avgTemperature2mDaylight;
   }
 
   @JsonProperty("avg_temperature_2m_daylight")
-  public void setAvgTemperature2mDaylight(Double avgTemperature2mDaylight) {
+  public void setAvgTemperature2mDaylight(List<Double> avgTemperature2mDaylight) {
     this.avgTemperature2mDaylight = avgTemperature2mDaylight;
   }
 
   @JsonProperty("avg_relative_humidity_2m_daylight")
-  public Double getAvgRelativeHumidity2mDaylight() {
+  public List<Double> getAvgRelativeHumidity2mDaylight() {
     return avgRelativeHumidity2mDaylight;
   }
 
   @JsonProperty("avg_relative_humidity_2m_daylight")
-  public void setAvgRelativeHumidity2mDaylight(Double avgRelativeHumidity2mDaylight) {
+  public void setAvgRelativeHumidity2mDaylight(List<Double> avgRelativeHumidity2mDaylight) {
     this.avgRelativeHumidity2mDaylight = avgRelativeHumidity2mDaylight;
   }
 
   @JsonProperty("avg_dew_point_2m_daylight")
-  public Double getAvgDewPoint2mDaylight() {
+  public List<Double> getAvgDewPoint2mDaylight() {
     return avgDewPoint2mDaylight;
   }
 
   @JsonProperty("avg_dew_point_2m_daylight")
-  public void setAvgDewPoint2mDaylight(Double avgDewPoint2mDaylight) {
+  public void setAvgDewPoint2mDaylight(List<Double> avgDewPoint2mDaylight) {
     this.avgDewPoint2mDaylight = avgDewPoint2mDaylight;
   }
 
   @JsonProperty("avg_apparent_temperature_daylight")
-  public Double getAvgApparentTemperatureDaylight() {
+  public List<Double> getAvgApparentTemperatureDaylight() {
     return avgApparentTemperatureDaylight;
   }
 
   @JsonProperty("avg_apparent_temperature_daylight")
-  public void setAvgApparentTemperatureDaylight(Double avgApparentTemperatureDaylight) {
+  public void setAvgApparentTemperatureDaylight(List<Double> avgApparentTemperatureDaylight) {
     this.avgApparentTemperatureDaylight = avgApparentTemperatureDaylight;
   }
 
   @JsonProperty("avg_temperature_80m_daylight")
-  public Double getAvgTemperature80mDaylight() {
+  public List<Double> getAvgTemperature80mDaylight() {
     return avgTemperature80mDaylight;
   }
 
   @JsonProperty("avg_temperature_80m_daylight")
-  public void setAvgTemperature80mDaylight(Double avgTemperature80mDaylight) {
+  public void setAvgTemperature80mDaylight(List<Double> avgTemperature80mDaylight) {
     this.avgTemperature80mDaylight = avgTemperature80mDaylight;
   }
 
   @JsonProperty("avg_temperature_120m_daylight")
-  public Double getAvgTemperature120mDaylight() {
+  public List<Double> getAvgTemperature120mDaylight() {
     return avgTemperature120mDaylight;
   }
 
   @JsonProperty("avg_temperature_120m_daylight")
-  public void setAvgTemperature120mDaylight(Double avgTemperature120mDaylight) {
+  public void setAvgTemperature120mDaylight(List<Double> avgTemperature120mDaylight) {
     this.avgTemperature120mDaylight = avgTemperature120mDaylight;
   }
 
   @JsonProperty("avg_wind_speed_10m_daylight")
-  public Double getAvgWindSpeed10mDaylight() {
+  public List<Double> getAvgWindSpeed10mDaylight() {
     return avgWindSpeed10mDaylight;
   }
 
   @JsonProperty("avg_wind_speed_10m_daylight")
-  public void setAvgWindSpeed10mDaylight(Double avgWindSpeed10mDaylight) {
+  public void setAvgWindSpeed10mDaylight(List<Double> avgWindSpeed10mDaylight) {
     this.avgWindSpeed10mDaylight = avgWindSpeed10mDaylight;
   }
 
   @JsonProperty("avg_wind_speed_80m_daylight")
-  public Double getAvgWindSpeed80mDaylight() {
+  public List<Double> getAvgWindSpeed80mDaylight() {
     return avgWindSpeed80mDaylight;
   }
 
   @JsonProperty("avg_wind_speed_80m_daylight")
-  public void setAvgWindSpeed80mDaylight(Double avgWindSpeed80mDaylight) {
+  public void setAvgWindSpeed80mDaylight(List<Double> avgWindSpeed80mDaylight) {
     this.avgWindSpeed80mDaylight = avgWindSpeed80mDaylight;
   }
 
   @JsonProperty("avg_visibility_daylight")
-  public Double getAvgVisibilityDaylight() {
+  public List<Double> getAvgVisibilityDaylight() {
     return avgVisibilityDaylight;
   }
 
   @JsonProperty("avg_visibility_daylight")
-  public void setAvgVisibilityDaylight(Double avgVisibilityDaylight) {
+  public void setAvgVisibilityDaylight(List<Double> avgVisibilityDaylight) {
     this.avgVisibilityDaylight = avgVisibilityDaylight;
   }
 
   @JsonProperty("total_rain_daylight")
-  public Double getTotalRainDaylight() {
+  public List<Double> getTotalRainDaylight() {
     return totalRainDaylight;
   }
 
   @JsonProperty("total_rain_daylight")
-  public void setTotalRainDaylight(Double totalRainDaylight) {
+  public void setTotalRainDaylight(List<Double> totalRainDaylight) {
     this.totalRainDaylight = totalRainDaylight;
   }
 
   @JsonProperty("total_showers_daylight")
-  public Double getTotalShowersDaylight() {
+  public List<Double> getTotalShowersDaylight() {
     return totalShowersDaylight;
   }
 
   @JsonProperty("total_showers_daylight")
-  public void setTotalShowersDaylight(Double totalShowersDaylight) {
+  public void setTotalShowersDaylight(List<Double> totalShowersDaylight) {
     this.totalShowersDaylight = totalShowersDaylight;
   }
 
   @JsonProperty("total_snowfall_daylight")
-  public Double getTotalSnowfallDaylight() {
+  public List<Double> getTotalSnowfallDaylight() {
     return totalSnowfallDaylight;
   }
 
   @JsonProperty("total_snowfall_daylight")
-  public void setTotalSnowfallDaylight(Double totalSnowfallDaylight) {
+  public void setTotalSnowfallDaylight(List<Double> totalSnowfallDaylight) {
     this.totalSnowfallDaylight = totalSnowfallDaylight;
   }
 
@@ -512,12 +514,12 @@ public class WeatherAggregatedData {
   }
 
   @JsonProperty("daylight_hours")
-  public List<Double> getDaylightHours() {
+  public List<Integer> getDaylightHours() {
     return daylightHours;
   }
 
   @JsonProperty("daylight_hours")
-  public void setDaylightHours(List<Double> daylightHours) {
+  public void setDaylightHours(List<Integer> daylightHours) {
     this.daylightHours = daylightHours;
   }
 
