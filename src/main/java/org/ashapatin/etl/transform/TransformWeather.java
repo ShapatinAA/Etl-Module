@@ -16,11 +16,17 @@ public class TransformWeather implements Transform<WeatherData, WeatherAggregate
   @Override
   public WeatherAggregatedData[] transform(WeatherData data)
       throws IncorrectDataFromApiException {
+    // Страшный метод. Где-то здесь начинается соприкосновение ООП и Процедурного программирования.
+    // Для уменьшения кол-ва строчек кода эту страшную простыню можно как-то через reflection
+    // подправить - итерироваться по методам/полям, но я до конца эту идею не сумел проработать,
+    // поэтому оставил так...
     validateData(data);
     int nOfDays = data.getDaily().getTime().size();
+    // n-билдеров, которые потом превратятся в n-объектов с аггрегированной информацией для n дней.
     var weatherAggregatedDataBuilders = Stream.generate(WeatherAggregatedData::builder)
         .limit(nOfDays)
         .toList();
+
     WeatherAggregatedData[] weatherAggregatedDataList = new WeatherAggregatedData[nOfDays];
     for (int i = 0; i < nOfDays; i++) {
       var weatherAggregatedDataBuilder = weatherAggregatedDataBuilders.get(i);

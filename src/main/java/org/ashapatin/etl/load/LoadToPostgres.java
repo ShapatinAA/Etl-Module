@@ -17,6 +17,10 @@ public class LoadToPostgres implements Load<WeatherAggregatedData[]> {
         var session = sessionFactory.openSession()) {
       Transaction transaction = session.beginTransaction();
       for (WeatherAggregatedData item : data) {
+        // Часть кода, ответственная за борьбу с дубликатами. sunset/sunrise для каждой записи будет
+        // уникален - этим можно восопльзоваться, чтобы находить дубликаты. Для увеличения
+        // производительности можно было бы сначала доставать все элементы из бд по датам, которые
+        // у нас есть в data элементе. Но решил для простоты.
         WeatherAggregatedData existing = session.createQuery(
             "FROM WeatherAggregatedData WHERE sunsetIso = :sunsetIso", WeatherAggregatedData.class)
             .setParameter("sunsetIso", item.getSunsetIso())

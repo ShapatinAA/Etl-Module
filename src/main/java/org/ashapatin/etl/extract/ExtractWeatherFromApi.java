@@ -47,6 +47,8 @@ public class ExtractWeatherFromApi implements Extract<WeatherData> {
       return;
     }
     validateSourceInfo(sourceInfo);
+    // именно такая форма для параметра для изменения временного интервала у api-запроса была
+    // выбрана просто потому что это никак не специфицировано в задании.
     url = url.replace("&start_date=2025-05-16&end_date=2025-05-30", sourceInfo);
   }
 

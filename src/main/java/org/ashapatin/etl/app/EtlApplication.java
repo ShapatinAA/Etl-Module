@@ -59,6 +59,9 @@ public class EtlApplication {
     Extract extractor = getExtractor();
     Transform transformer = getTransformer();
     Load loader = getLoader();
+    // Не совсем красиво, наверное, но хотелось сделать так, чтобы эту функцию больше никогда
+    // не надо было изменять. Суть etl-модуля, чтобы достать, трансофрмировать, и выгрузить.
+    // Попутно передавая объект действия.
     loader.load(transformer.transform(extractor.extract(sourceInfo)));
 
   }
