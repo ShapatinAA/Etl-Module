@@ -8,6 +8,9 @@ services:
       context: ./
       dockerfile: ./Docker_ETL_Module/Dockerfile
     command: "sleep infinity"
+    volumes:
+      - ./result:/tmp/result
+      - ./input:/app/input
     env_file:
       - "./Docker_ETL_Module/postgres.env"
     networks:

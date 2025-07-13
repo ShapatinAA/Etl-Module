@@ -57,15 +57,20 @@ docker compose up
   ```
   Example:
     - ```
-      docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar jsonToPostgres ./weather_data.json
+      docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar jsonToPostgres /app/input/haha.json
       ```
 - ``` 
   docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar jsonToCsv json_file
   ```
   Example:
     - ```
-      docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar jsonToCsv ./weather_data.json
+      docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar jsonToCsv /app/input/haha.json
       ```
+
+Remember, that when specifying json-file it either should be somehow mapped into container, 
+or it should be placed in directory `input` in this project or subdirectories before building. 
+And specified json_file should be written as absolute path to file on in docker-container 
+file system.
 
 ## Configuration
 
@@ -76,5 +81,6 @@ Default port is `31477`.
 
 ## Result checking
 
-All results from running commands from previous sections can bee seen in file `weather_result.csv` 
-or in `weather.weather_aggregated_data` table in `postgres` database of PostgreSQL.
+All results from running commands from previous sections can bee seen in file 
+`result/weather_result.csv` or in `weather.weather_aggregated_data` table in `postgres` database 
+of PostgreSQL.

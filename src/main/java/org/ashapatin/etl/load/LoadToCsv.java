@@ -12,7 +12,7 @@ import org.ashapatin.etl.load.exception.UnableToOpenCsvFileException;
 import org.ashapatin.etl.model.WeatherAggregatedData;
 
 public class LoadToCsv implements Load<WeatherAggregatedData[]> {
-  private static final String CSV_FILE_PATH = "./weather_result.csv";
+  private static final String CSV_FILE_PATH = "/tmp/result/weather_result.csv";
   private final String DATA_PATTERN = "yyyy-MM-dd'T'HH:mm'Z'";
 
   @Override
@@ -54,6 +54,9 @@ public class LoadToCsv implements Load<WeatherAggregatedData[]> {
   private void writeToFile(CsvMapper csvMapper,
       CsvSchema csvWeatherSchema, WeatherAggregatedData[] data) throws IOException {
     ObjectWriter csvWriter = csvMapper.writer(csvWeatherSchema);
+    // Константа потому что в задании нет функционала, что пользователь может выбрать куда сохранять
+    // Поэтому именно так сделал для удобства, чтобы мапить только
+    // одно место и можно было видеть изменения сразу с локальной папки.
     File csvFile = new File(CSV_FILE_PATH);
     csvWriter.writeValue(csvFile, data);
   }
