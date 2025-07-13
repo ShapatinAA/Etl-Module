@@ -36,12 +36,8 @@ public class ExtractWeatherFromApi implements Extract<WeatherData> {
 
       WeatherData weatherData = getWeatherPojoFromResponce(httpResponse);
       return weatherData;
-    } catch (JsonProcessingException e) {
-      throw new UnableToExtractJsonFromApiException("An exception happen in the process of mapping "
-          + "json response onto WeatherData POJO.", e.getCause());
     } catch (IOException | InterruptedException e) {
-      throw new UnableToExtractJsonFromApiException("An exception happen in the process of "
-          + "retrieving json from API.", e.getCause());
+      throw new UnableToExtractJsonFromApiException(e.getMessage(), e.getCause());
     }
   }
 
@@ -68,8 +64,7 @@ public class ExtractWeatherFromApi implements Extract<WeatherData> {
             + "were inserted. Please write correct ones.");
       }
     } catch (DateTimeParseException e) {
-      throw new IncorrectDatesParameterException("Incorrect parameters for weather duration "
-          + "were inserted. Please write correct ones.", e.getCause());
+      throw new IncorrectDatesParameterException(e.getMessage(), e.getCause());
     }
 
   }

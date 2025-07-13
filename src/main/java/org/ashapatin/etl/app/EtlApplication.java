@@ -54,7 +54,7 @@ public class EtlApplication {
  * @throws EtlException This method can throw any kind of exception inherited from
  * <code>EtlException</code>.
  */
-  public void run() throws Exception {
+  public void run() throws EtlException {
     validateInput();
     Extract extractor = getExtractor();
     Transform transformer = getTransformer();

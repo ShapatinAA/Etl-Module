@@ -1,5 +1,7 @@
 package org.ashapatin.etl.extract;
 
+import org.ashapatin.etl.extract.exception.ExtractException;
+
 /**
  * <h2>Extract</h2>
  * <p><code>Extract</code> is an interface of all extractions classes. It is supposed to
@@ -18,5 +20,5 @@ public interface Extract<T> {
  * POJO of this information.</p>
  * @param sourceInfo
  */
-  public T extract(String sourceInfo) throws Exception;
+  public T extract(String sourceInfo) throws ExtractException;
 }
