@@ -39,3 +39,4 @@ build/
 .DS_Store
 /.idea/
 /weather_result.csv
+/postgres/data/

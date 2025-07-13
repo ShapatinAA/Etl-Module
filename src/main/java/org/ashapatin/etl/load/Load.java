@@ -1,5 +1,7 @@
 package org.ashapatin.etl.load;
 
+import org.ashapatin.etl.load.exception.LoadException;
+
 /**
  * <h2>Load</h2>
  * <p><code>Load</code> is an interface of all load classes. It is supposed to
@@ -18,5 +20,5 @@ public interface Load<T> {
    * POJO of this information.</p>
    * @param data
    */
-  public void load(T data) throws Exception;
+  public void load(T data) throws LoadException;
 }

@@ -9,9 +9,6 @@ import org.ashapatin.etl.app.exception.EtlException;
  * more specific exception among this class inheritances and not throw this one, as it is.</p>
  */
 public class ExtractException extends EtlException {
-  public ExtractException () {
-
-  }
   public ExtractException(String message) {
     super(message);
   }
