@@ -40,7 +40,7 @@ docker compose up
     docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar apiTopostgres
     ```
   - ```
-    docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar apiTopostgres &start_date=2025-05-16&end_date=2025-05-30
+    docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar apiTopostgres "&start_date=2025-05-16&end_date=2025-05-30"
     ```
 - ``` 
   docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar apiToCsv [optional date interval]
@@ -50,7 +50,7 @@ docker compose up
       docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar apiToCsv
       ```
     - ```
-      docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar apiToCsv &start_date=2025-05-16&end_date=2025-05-30
+      docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar apiToCsv "&start_date=2025-05-16&end_date=2025-05-30"
       ```
 - ``` 
   docker compose exec etl java -jar /app/target/Weather_ETL-1.0-SNAPSHOT.jar jsonToPostgres json_file
